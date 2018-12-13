@@ -24,32 +24,32 @@ mvn clean package
 
 ### PLAYING
 
-## Step 1: Inventory Raw Data Producer
+## Step 1: AAX Raw Data Producer
 
-# Start an avro consumer on our inventory-raw topic , adjust the command if necessary
-kafka-avro-console-consumer --topic inventory-raw --bootstrap-server 127.0.0.1:9092
+# Start an avro consumer on our aax-raw topic , adjust the command if necessary
+kafka-avro-console-consumer --topic aax-raw --bootstrap-server 127.0.0.1:9092
 
 # And launch our first producer in another terminal !
-#export INPUT_PATH="C:\Users\OzturkD\Desktop\aaa\" # Kafka for Beginners Course
-java -jar inventory-raw-producer/target/inventory-raw-producer-1.0-DEMO.jar
-java -jar inventory-raw-producer/target/inventory-raw-producer-1.0-DEMO-jar-with-dependencies.jar
+#export INPUT_PATH="C:\Users\OzturkD\Desktop\aaa\"
+java -jar aax-raw-producer/target/aax-raw-producer-1.0-DEMO.jar
+java -jar aax-raw-producer/target/aax-raw-producer-1.0-DEMO-jar-with-dependencies.jar
 # This pulls over the data from csv files located in the input path. It has some intention delay of 50 ms between each send so that we can see it stream in the consumer consumer
 
 
-## Step 2: Kafka Streams - Inventory Aggregator
+## Step 2: Kafka Streams - AAX Aggregator
 
-# New terminal: Start an avro consumer on our inventory-core topic
-kafka-avro-console-consumer --topic inventory-core --bootstrap-server 107.0.0.1:9092
+# New terminal: Start an avro consumer on our aax-core topic
+kafka-avro-console-consumer --topic aax-core --bootstrap-server 107.0.0.1:9092
 
-# New terminal: Start an avro consumer on our inventory-evaluation topic
-kafka-avro-console-consumer --topic inventory-evaluation --bootstrap-server 127.0.0.1:9092
+# New terminal: Start an avro consumer on our aax-evaluation topic
+kafka-avro-console-consumer --topic aax-evaluation --bootstrap-server 127.0.0.1:9092
 
-# Launch our inventory aggregator app
-java -jar inventory-aggregator/target/inventory-aggregator-1.0-DEMO.jar
-java -jar inventory-aggregator/target/inventory-aggregator-1.0-DEMO-jar-with-dependencies.jar
+# Launch our AAX aggregator app
+java -jar aax-aggregator/target/aax-aggregator-1.0-DEMO.jar
+java -jar aax-aggregator/target/aax-aggregator-1.0-DEMO-jar-with-dependencies.jar
 
 # Load the evaluation layer data into Solr using Kafka Connect Sink!
-confluent load SinkTopics -d kafka-connectors/SinkTopicsInPostgres.properties
+#confluent load SinkTopics -d kafka-connectors/SinkTopicsInPostgres.properties
 
 ## Step 6: Clean up
 docker-compose down
