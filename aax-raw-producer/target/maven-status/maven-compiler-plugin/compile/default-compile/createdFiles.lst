@@ -1,0 +1,8 @@
+com\durmus\kafka\mh\avro\aax\AAX$Builder.class
+com\durmus\kafka\mh\aax\runnable\AaxAvroProducerThread.class
+com\durmus\kafka\mh\aax\client\AaxCsvParser.class
+com\durmus\kafka\mh\avro\aax\AAX$1.class
+com\durmus\kafka\mh\aax\AppConfig.class
+com\durmus\kafka\mh\aax\runnable\AaxFetcherThread.class
+com\durmus\kafka\mh\avro\aax\AAX.class
+com\durmus\kafka\mh\aax\AaxProducerMain.class

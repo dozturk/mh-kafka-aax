@@ -1,0 +1,161 @@
+{
+  "type": "record",
+  "name": "AAXCore",
+  "namespace": "com.durmus.kafka.mh.avro.aax",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "mhkundennummer",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "guid",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "crmtkundennummer",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "carmenkundennummer",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "kek",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "adresse",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "mail",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "zahlart",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "vertragsnummer",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "produktid",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "produktname",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "mvlz",
+      "type": [
+        "null",
+        "long"
+      ],
+      "default": null
+    },
+    {
+      "name": "vertragsstart",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "vertragsende",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "kundigungsdatum",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "kundigungsmodus",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "kundigungsgrund",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "mvlzendedatum",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "kundigungsdatumbindefrist",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "delivery_date",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    }
+  ]
+}
