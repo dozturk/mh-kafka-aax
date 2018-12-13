@@ -12,6 +12,7 @@
     <modules>
         <module>aax-raw-producer</module>
         <module>aax-aggregator</module>
+        <module>aax-sales-aggregator</module>
     </modules>
 
 

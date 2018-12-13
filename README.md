@@ -1,4 +1,4 @@
-# kafka-magenta-inventory
+# kafka-magenta-aax
 kafka applications
 
 # Building

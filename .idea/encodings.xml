@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/aax-aggregator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aax-raw-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aax-sales-aggregator" charset="UTF-8" />
   </component>
 </project>

@@ -8,7 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="aax-aggregator" />
         <module name="aax-raw-producer" />
+        <module name="aax-sales-aggregator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="aax-sales-aggregator" target="1.8" />
+      <module name="aaxsalesaggregator" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
