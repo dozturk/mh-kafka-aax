@@ -7,3 +7,4 @@ com\durmus\kafka\mh\avro\aax\AAXCore$Builder.class
 com\durmus\kafka\mh\avro\aax\AAXEval$Builder.class
 com\durmus\kafka\mh\aax\streams\aggregator\AppConfig.class
 com\durmus\kafka\mh\avro\aax\AAXCore.class
+com\durmus\kafka\mh\aax\streams\aggregator\AppConfig$AppConfigBuilder.class
