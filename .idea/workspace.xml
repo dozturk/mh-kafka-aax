@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5887afbd-5298-4a9f-a563-c79ce496f3c3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/classes/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/aax-aggregator-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/aax-aggregator-1.0-DEMO.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aax-aggregator/target/classes/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/classes/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/original-aax-aggregator-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/original-aax-aggregator-1.0-DEMO.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-raw-producer/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/src/main/resources/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/aax-raw-producer-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/aax-raw-producer-1.0-DEMO.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/classes/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/original-aax-raw-producer-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/original-aax-raw-producer-1.0-DEMO.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/compile/aax-raw-producer-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/compile/aax-raw-producer-1.0-DEMO.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,36 +29,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aax-sales-aggregator/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aax-aggregator/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1381">
+              <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AggregatorMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="51" column="73" lean-forward="true" selection-start-line="51" selection-start-column="73" selection-end-line="51" selection-end-column="73" />
+            <state relative-caret-position="519">
+              <caret line="204" column="1" lean-forward="true" selection-start-line="204" selection-start-column="1" selection-end-line="204" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="75" lean-forward="true" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#130#131#0" expanded="true" />
-                <element signature="e#187#188#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,6 +77,8 @@
       <find>invent</find>
       <find>inv</find>
       <find>inve</find>
+      <find>patter</find>
+      <find>datepa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,12 +100,10 @@
         <option value="$PROJECT_DIR$/aax-raw-producer/src/main/resources/avro/aax-raw.avsc" />
         <option value="$PROJECT_DIR$/aax-raw-producer/src/main/java/com/durmus/kafka/mh/aax/AppConfig.java" />
         <option value="$PROJECT_DIR$/aax-raw-producer/src/main/java/com/durmus/kafka/mh/aax/AaxProducerMain.java" />
-        <option value="$PROJECT_DIR$/aax-raw-producer/pom.xml" />
         <option value="$PROJECT_DIR$/aax-raw-producer/src/main/java/com/durmus/kafka/mh/aax/runnable/AaxFetcherThread.java" />
         <option value="$PROJECT_DIR$/aax-raw-producer/src/main/java/com/durmus/kafka/mh/aax/runnable/AaxAvroProducerThread.java" />
         <option value="$PROJECT_DIR$/aax-raw-producer/src/main/java/com/durmus/kafka/mh/aax/client/AaxCsvParser.java" />
         <option value="$PROJECT_DIR$/aax-raw-producer/README.md" />
-        <option value="$PROJECT_DIR$/aax-raw-producer/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/resources/avro/aax-core.avsc" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/resources/avro/aax-evaluation.avsc" />
         <option value="$PROJECT_DIR$/run.sh" />
@@ -107,13 +111,15 @@
         <option value="$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/avro/aax-sales.avsc" />
         <option value="$PROJECT_DIR$/aax-aggregator/target/generated-sources/avro/com/durmus/kafka/mh/avro/aax/Util.java" />
-        <option value="$PROJECT_DIR$/aax-aggregator/pom.xml" />
-        <option value="$PROJECT_DIR$/aax-sales-aggregator/pom.xml" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/UtilBase.java" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.java" />
+        <option value="$PROJECT_DIR$/aax-aggregator/pom.xml" />
+        <option value="$PROJECT_DIR$/aax-raw-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/aax-sales-aggregator/pom.xml" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java" />
-        <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" />
+        <option value="$PROJECT_DIR$/aax-raw-producer/src/main/resources/application.conf" />
+        <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" />
       </list>
     </option>
   </component>
@@ -205,53 +211,6 @@
             <path>
               <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
               <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-aggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-aggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="avro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-aggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-aggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-aggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="avro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-aggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="avro" type="462c0819:PsiDirectoryNode" />
-              <item name="aax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
               <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -266,43 +225,6 @@
               <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aax" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="aax" type="462c0819:PsiDirectoryNode" />
-              <item name="runnable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
@@ -311,45 +233,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="avro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="avro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
-              <item name="aax-raw-producer" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-              <item name="avro" type="462c0819:PsiDirectoryNode" />
-              <item name="aax" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
@@ -367,7 +250,15 @@
               <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
               <item name="aax-sales-aggregator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mh-kafka-aax" type="462c0819:PsiDirectoryNode" />
+              <item name="aax-sales-aggregator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mh-kafka-aax" type="b2602c69:ProjectViewProjectNode" />
@@ -535,7 +426,21 @@
       <option name="project" value="LOCAL" />
       <updated>1545041752872</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit 2">
+      <created>1545041906231</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1545041906231</updated>
+    </task>
+    <task id="LOCAL-00006" summary="commit 2">
+      <created>1545042255453</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545042255453</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -544,15 +449,15 @@
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" weight="0.32851636" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50053304" side_tool="true" weight="0.2842004" />
       <window_info anchor="right" id="Maven Projects" weight="0.32995737" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.2842004" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49946696" visible="true" weight="0.32273602" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
@@ -644,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-raw-producer/src/main/resources/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -672,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-raw-producer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1469">
-          <caret line="177" column="47" lean-forward="true" selection-start-line="177" selection-start-column="47" selection-end-line="177" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -690,13 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -765,13 +649,6 @@
     <entry file="file://$PROJECT_DIR$/kafka-connectors/SinkTopicsToHDFS.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-sales-aggregator/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/typesafe/config/1.3.1/config-1.3.1-sources.jar!/com/typesafe/config/ConfigFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -797,20 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aax-aggregator/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="109" column="11" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aax-raw-producer/src/main/java/com/durmus/kafka/mh/aax/AaxProducerMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -821,29 +684,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java">
+    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="75" lean-forward="true" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#130#131#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="17">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-raw-producer/src/main/resources/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-sales-aggregator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-raw-producer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-aggregator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1381">
+          <caret line="89" column="48" selection-start-line="89" selection-start-column="48" selection-end-line="89" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="51" column="73" lean-forward="true" selection-start-line="51" selection-start-column="73" selection-end-line="51" selection-end-column="73" />
+        <state relative-caret-position="519">
+          <caret line="204" column="1" lean-forward="true" selection-start-line="204" selection-start-column="1" selection-end-line="204" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

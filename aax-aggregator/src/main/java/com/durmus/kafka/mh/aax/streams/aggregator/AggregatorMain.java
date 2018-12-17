@@ -119,7 +119,6 @@ public class AggregatorMain {
                     .setProduktname(aax.getProduktname())
                     .setKundigungsmodus(aax.getKundigungsmodus())
                     .setKundigungsgrund(aax.getKundigungsgrund())
-
                     .setVertragsnummer(Util.checkIsEmptyOrNull(aax.getVertragsnummer())
                             ? Long.valueOf(aax.getVertragsnummer())
                             : null)
@@ -129,7 +128,6 @@ public class AggregatorMain {
                     .setMvlz(Util.checkIsEmptyOrNull(aax.getMvlz())
                             ? Long.valueOf(aax.getMvlz())
                             : null)
-
                     .setVertragsstart(Util.getEpochMillis(aax.getVertragsstart()))
                     .setVertragsende(Util.getEpochMillis(aax.getVertragsende()))
                     .setKundigungsdatum(Util.getEpochMillis(aax.getKundigungsdatum()))
@@ -137,8 +135,6 @@ public class AggregatorMain {
                     .setKundigungsdatumbindefrist(Util.getEpochMillis(aax.getKundigungsdatumbindefrist()))
                     .setDeliveryDate(Instant.now().toEpochMilli())
                     .build();
-
-
             return aaxCore;
         }
         catch (NumberFormatException  e){
@@ -164,7 +160,6 @@ public class AggregatorMain {
                     .setProduktname(aax.getProduktname())
                     .setKundigungsmodus(aax.getKundigungsmodus())
                     .setKundigungsgrund(aax.getKundigungsgrund())
-
                     .setVertragsnummer(Util.checkIsEmptyOrNull(aax.getVertragsnummer())
                             ? Long.valueOf(aax.getVertragsnummer())
                             : null)
@@ -174,13 +169,11 @@ public class AggregatorMain {
                     .setMvlz(Util.checkIsEmptyOrNull(aax.getMvlz())
                             ? Long.valueOf(aax.getMvlz())
                             : null)
-
                     .setVertragsstart(Util.getEpochMillis(aax.getVertragsstart()))
                     .setVertragsende(Util.getEpochMillis(aax.getVertragsende()))
                     .setKundigungsdatum(Util.getEpochMillis(aax.getKundigungsdatum()))
                     .setMvlzendedatum(Util.getEpochMillis(aax.getMvlzendedatum()))
                     .setKundigungsdatumbindefrist(Util.getEpochMillis(aax.getKundigungsdatumbindefrist()))
-
                     .setGeschaeftsfall(Util.getEpochMillis(aax.getVertragsende()) == 0
                             ? "Zugang"
                             : "Wegfall")
@@ -196,10 +189,8 @@ public class AggregatorMain {
                     .setGfTage((long) (Util.getEpochMillis(aax.getVertragsende()) == 0
                             ? Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsstart())).atZone(ZoneId.systemDefault()).getDayOfYear()
                             : Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsende())).atZone(ZoneId.systemDefault()).getDayOfYear()))
-
                     .setDeliveryDate(Instant.now().toEpochMilli())
                     .build();
-
 
             System.out.println(aaxEval);
 
