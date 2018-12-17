@@ -38,10 +38,9 @@ public class AggregatorMain {
     private static Util util = new Util();
 
     public static void main(String[] args) {
-//        AggregatorMain aggregatorMain = new AggregatorMain();
-//        aggregatorMain.start();
+        AggregatorMain aggregatorMain = new AggregatorMain();
+        aggregatorMain.start();
 
-        System.out.println(Util.getSexyEpochMillis("10.10.2018"));
     }
 
     private void start() {
@@ -108,7 +107,6 @@ public class AggregatorMain {
     private static AAXCore toCoreLayer(AAX aax, String datePattern)  {
         try {
 
-            //val vs var?? lombok! && simple junit tests!
             val aaxCore = AAXCore
                     .newBuilder()
                     .setId(Long.valueOf(aax.getId()))
@@ -144,89 +142,6 @@ public class AggregatorMain {
                     .build();
 
 
-
-
-
-//            AAXCore.Builder AAXCoreBuilder = AAXCore.newBuilder();
-//            AAXCoreBuilder.setId(Long.parseLong(aax.getId()));
-//            AAXCoreBuilder.setMhkundennummer(aax.getMhkundennummer());
-//            AAXCoreBuilder.setGuid(aax.getGuid());
-//            AAXCoreBuilder.setCrmtkundennummer(aax.getCrmtkundennummer());
-//            AAXCoreBuilder.setCarmenkundennummer(aax.getCarmenkundennummer());
-//            AAXCoreBuilder.setKek(aax.getKek());
-//            AAXCoreBuilder.setName(aax.getName());
-//            AAXCoreBuilder.setAdresse(aax.getAdresse());
-//            AAXCoreBuilder.setMail(aax.getMail());
-//            AAXCoreBuilder.setZahlart(aax.getZahlart());
-//            if (aax.getVertragsnummer() != null && !aax.getVertragsnummer().equals("")) {
-//                AAXCoreBuilder.setVertragsnummer(Long.parseLong(aax.getVertragsnummer()));
-//            } else {
-//                AAXCoreBuilder.setVertragsnummer(null);
-//            }
-//            if (aax.getProduktid() != null && !aax.getProduktid().equals("")) {
-//                AAXCoreBuilder.setProduktid(Long.parseLong(aax.getProduktid()));
-//            } else {
-//                AAXCoreBuilder.setProduktid(null);
-//            }
-//            AAXCoreBuilder.setProduktname(aax.getProduktname());
-//            if (aax.getMvlz() != null && !aax.getMvlz().equals("")) {
-//                AAXCoreBuilder.setMvlz(Long.parseLong(aax.getMvlz()));
-//            } else {
-//                AAXCoreBuilder.setMvlz(null);
-//            }
-//            if (aax.getVertragsstart() != null && !aax.getVertragsstart().equals("")) {
-//                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsstart());
-//                Long vStart = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-//                AAXCoreBuilder.setVertragsstart(vStart);
-//            } else {
-//                Date date = new Date(0L);
-//                Long vStart = date.toInstant().toEpochMilli();
-//                AAXCoreBuilder.setVertragsstart(vStart);
-//            }
-//            if (aax.getVertragsende() != null && !aax.getVertragsende().equals("")) {
-//                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsende());
-//                Long vEnde = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-//                AAXCoreBuilder.setVertragsende(vEnde);
-//            } else {
-//                Date date = new Date(0L);
-//                Long vEnde = date.toInstant().toEpochMilli();
-//                AAXCoreBuilder.setVertragsende(vEnde);
-//            }
-//            if (aax.getKundigungsdatum() != null && !aax.getKundigungsdatum().equals("")) {
-//                Date date = new SimpleDateFormat(datePattern).parse(aax.getKundigungsdatum());
-//                Long kDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-//                AAXCoreBuilder.setKundigungsdatum(kDatum);
-//            } else {
-//                Date date = new Date(0L);
-//                Long kDatum = date.toInstant().toEpochMilli();
-//                AAXCoreBuilder.setKundigungsdatum(kDatum);
-//            }
-//            AAXCoreBuilder.setKundigungsmodus(aax.getKundigungsmodus());
-//            AAXCoreBuilder.setKundigungsgrund(aax.getKundigungsgrund());
-//            if (aax.getMvlzendedatum() != null && !aax.getMvlzendedatum().equals("")) {
-//                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
-//                Long mDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-//                AAXCoreBuilder.setMvlzendedatum(mDatum);
-//            } else {
-//                Date date = new Date(0L);
-//                Long mDatum = date.toInstant().toEpochMilli();
-//                AAXCoreBuilder.setMvlzendedatum(mDatum);
-//            }
-//            if (aax.getKundigungsdatumbindefrist() != null && !aax.getKundigungsdatumbindefrist().equals("")) {
-//                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
-//                Long kDatumFrist = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-//                AAXCoreBuilder.setKundigungsdatumbindefrist(kDatumFrist);
-//            } else {
-//                Date date = new Date(0L);
-//                Long kDatumFrist = date.toInstant().toEpochMilli();
-//                AAXCoreBuilder.setKundigungsdatumbindefrist(kDatumFrist);
-//            }
-//            AAXCoreBuilder.setDeliveryDate(Instant.now().toEpochMilli());
-
-//            AAXCore aaxCore = AAXCoreBuilder.build();
-
-//            System.out.println(aaxCore);
-
             return aaxCore;
         }
         catch (NumberFormatException  e){
@@ -236,107 +151,64 @@ public class AggregatorMain {
 
     private static AAXEval toEvaluationLayer(AAX aax, String datePattern)  {
         try {
-            AAXEval.Builder AAXEvalBuilder = AAXEval.newBuilder();
-            AAXEvalBuilder.setId(Long.parseLong(aax.getId()));
-            AAXEvalBuilder.setMhkundennummer(aax.getMhkundennummer());
-            AAXEvalBuilder.setGuid(aax.getGuid());
-            AAXEvalBuilder.setCrmtkundennummer(aax.getCrmtkundennummer());
-            AAXEvalBuilder.setCarmenkundennummer(aax.getCarmenkundennummer());
-            AAXEvalBuilder.setKek(aax.getKek());
-            AAXEvalBuilder.setName(aax.getName());
-            AAXEvalBuilder.setAdresse(aax.getAdresse());
-            AAXEvalBuilder.setMail(aax.getMail());
-            AAXEvalBuilder.setZahlart(aax.getZahlart());
-            if (aax.getVertragsnummer() != null && !aax.getVertragsnummer().equals("")) {
-                AAXEvalBuilder.setVertragsnummer(Long.parseLong(aax.getVertragsnummer()));
-            } else {
-                AAXEvalBuilder.setVertragsnummer(null);
-            }
-            if (aax.getProduktid() != null && !aax.getProduktid().equals("")) {
-                AAXEvalBuilder.setProduktid(Long.parseLong(aax.getProduktid()));
-            } else {
-                AAXEvalBuilder.setProduktid(null);
-            }
-            AAXEvalBuilder.setProduktname(aax.getProduktname());
-            if (aax.getMvlz() != null && !aax.getMvlz().equals("")) {
-                AAXEvalBuilder.setMvlz(Long.parseLong(aax.getMvlz()));
-            } else {
-                AAXEvalBuilder.setMvlz(null);
-            }
-            if (aax.getVertragsstart() != null && !aax.getVertragsstart().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsstart());
-                Long vStart = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXEvalBuilder.setVertragsstart(vStart);
-            } else {
-                Date date = new Date(0L);
-                Long vStart = date.toInstant().toEpochMilli();
-                AAXEvalBuilder.setVertragsstart(vStart);
-            }
-            if (aax.getVertragsende() != null && !aax.getVertragsende().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsende());
-                Long vEnde = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXEvalBuilder.setVertragsende(vEnde);
-            } else {
-                Date date = new Date(0L);
-                Long vEnde = date.toInstant().toEpochMilli();
-                AAXEvalBuilder.setVertragsende(vEnde);
-            }
-            if (aax.getKundigungsdatum() != null && !aax.getKundigungsdatum().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getKundigungsdatum());
-                Long kDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXEvalBuilder.setKundigungsdatum(kDatum);
-            } else {
-                Date date = new Date(0L);
-                Long kDatum = date.toInstant().toEpochMilli();
-                AAXEvalBuilder.setKundigungsdatum(kDatum);
-            }
-            AAXEvalBuilder.setKundigungsmodus(aax.getKundigungsmodus());
-            AAXEvalBuilder.setKundigungsgrund(aax.getKundigungsgrund());
-            if (aax.getMvlzendedatum() != null && !aax.getMvlzendedatum().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
-                Long mDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXEvalBuilder.setMvlzendedatum(mDatum);
-            } else {
-                Date date = new Date(0L);
-                Long mDatum = date.toInstant().toEpochMilli();
-                AAXEvalBuilder.setMvlzendedatum(mDatum);
-            }
-            if (aax.getKundigungsdatumbindefrist() != null && !aax.getKundigungsdatumbindefrist().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
-                Long kDatumFrist = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXEvalBuilder.setKundigungsdatumbindefrist(kDatumFrist);
-            } else {
-                Date date = new Date(0L);
-                Long kDatumFrist = date.toInstant().toEpochMilli();
-                AAXEvalBuilder.setKundigungsdatumbindefrist(kDatumFrist);
-            }
 
-            AAXEvalBuilder.setDeliveryDate(Instant.now().toEpochMilli());
+            val aaxEval = AAXEval
+                    .newBuilder()
+                    .setId(Long.valueOf(aax.getId()))
+                    .setMhkundennummer(aax.getMhkundennummer())
+                    .setGuid(aax.getGuid())
+                    .setCrmtkundennummer(aax.getCrmtkundennummer())
+                    .setCarmenkundennummer(aax.getCarmenkundennummer())
+                    .setKek(aax.getKek())
+                    .setName(aax.getName())
+                    .setAdresse(aax.getAdresse())
+                    .setMail(aax.getMail())
+                    .setZahlart(aax.getZahlart())
+                    .setProduktname(aax.getProduktname())
+                    .setKundigungsmodus(aax.getKundigungsmodus())
+                    .setKundigungsgrund(aax.getKundigungsgrund())
 
-            if (AAXEvalBuilder.getVertragsende() == 0 ) {
-                AAXEvalBuilder.setGeschaeftsfall("Zugang");
-                AAXEvalBuilder.setGfDatum(AAXEvalBuilder.getVertragsstart());
-                AAXEvalBuilder.setGfWoche((long) Instant.ofEpochMilli(AAXEvalBuilder.getVertragsstart()).atZone(ZoneId.systemDefault()).get(WeekFields.ISO.weekOfYear()));
-                AAXEvalBuilder.setGfMonat((long) Instant.ofEpochMilli(AAXEvalBuilder.getVertragsstart()).atZone(ZoneId.systemDefault()).getMonthValue());
-                AAXEvalBuilder.setGfTage((long) Instant.ofEpochMilli(AAXEvalBuilder.getVertragsstart()).atZone(ZoneId.systemDefault()).getDayOfYear());
-            }
-            else {
-                AAXEvalBuilder.setGeschaeftsfall("Wegfall");
-                AAXEvalBuilder.setGfDatum(AAXEvalBuilder.getVertragsende());
-                AAXEvalBuilder.setGfWoche((long) Instant.ofEpochMilli(AAXEvalBuilder.getVertragsende()).atZone(ZoneId.systemDefault()).get(WeekFields.ISO.weekOfYear()));
-                AAXEvalBuilder.setGfMonat((long) Instant.ofEpochMilli(AAXEvalBuilder.getVertragsende()).atZone(ZoneId.systemDefault()).getMonthValue());
-                AAXEvalBuilder.setGfTage((long) Instant.ofEpochMilli(AAXEvalBuilder.getVertragsende()).atZone(ZoneId.systemDefault()).getDayOfYear());
-            }
+                    .setVertragsnummer(Util.checkIsEmptyOrNull(aax.getVertragsnummer())
+                            ? Long.valueOf(aax.getVertragsnummer())
+                            : null)
+                    .setProduktid(Util.checkIsEmptyOrNull(aax.getProduktid())
+                            ? Long.valueOf(aax.getProduktid())
+                            : null)
+                    .setMvlz(Util.checkIsEmptyOrNull(aax.getMvlz())
+                            ? Long.valueOf(aax.getMvlz())
+                            : null)
 
+                    .setVertragsstart(Util.getEpochMillis(aax.getVertragsstart()))
+                    .setVertragsende(Util.getEpochMillis(aax.getVertragsende()))
+                    .setKundigungsdatum(Util.getEpochMillis(aax.getKundigungsdatum()))
+                    .setMvlzendedatum(Util.getEpochMillis(aax.getMvlzendedatum()))
+                    .setKundigungsdatumbindefrist(Util.getEpochMillis(aax.getKundigungsdatumbindefrist()))
 
-            AAXEval aaxEval = AAXEvalBuilder.build();
+                    .setGeschaeftsfall(Util.getEpochMillis(aax.getVertragsende()) ==0
+                            ? "Zugang"
+                            : "Wegfall")
+                    .setGfDatum(Util.getEpochMillis(aax.getVertragsende()) == 0
+                            ? Util.getEpochMillis(aax.getVertragsstart())
+                            : Util.getEpochMillis(aax.getVertragsende()))
+                    .setGfMonat((long) (Util.getEpochMillis(aax.getVertragsende()) == 0
+                            ? Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsstart())).atZone(ZoneId.systemDefault()).get(WeekFields.ISO.weekOfYear())
+                            : Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsende())).atZone(ZoneId.systemDefault()).get(WeekFields.ISO.weekOfYear())))
+                    .setGfWoche((long) (Util.getEpochMillis(aax.getVertragsende()) == 0
+                            ? Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsstart())).atZone(ZoneId.systemDefault()).getMonthValue()
+                            : Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsende())).atZone(ZoneId.systemDefault()).getMonthValue()))
+                    .setGfTage((long) (Util.getEpochMillis(aax.getVertragsende()) == 0
+                            ? Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsstart())).atZone(ZoneId.systemDefault()).getDayOfYear()
+                            : Instant.ofEpochMilli(Util.getEpochMillis(aax.getVertragsende())).atZone(ZoneId.systemDefault()).getDayOfYear()))
+
+                    .setDeliveryDate(Instant.now().toEpochMilli())
+                    .build();
+
 
             System.out.println(aaxEval);
-            System.out.println(Instant.ofEpochMilli(aaxEval.getVertragsstart()));
 
             return aaxEval;
         }
-        catch (NumberFormatException | ParseException e){
+        catch (NumberFormatException   e){
             throw new NumberFormatException();
         }
     }

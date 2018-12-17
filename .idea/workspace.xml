@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5887afbd-5298-4a9f-a563-c79ce496f3c3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/avro/aax-sales.avsc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/aax-aggregator-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/aax-aggregator-1.0-DEMO.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/classes/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/classes/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/classes/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/classes/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/classes/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-aggregator/target/original-aax-aggregator-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-aggregator/target/original-aax-aggregator-1.0-DEMO.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/aax-raw-producer-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/aax-raw-producer-1.0-DEMO.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-raw-producer/target/original-aax-raw-producer-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/aax-raw-producer/target/original-aax-raw-producer-1.0-DEMO.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-sales-aggregator/aax-sales-aggregator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/aax-sales-aggregator/aax-sales-aggregator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aax-sales-aggregator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aax-sales-aggregator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/compile/aax-raw-producer-1.0-DEMO.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/compile/aax-raw-producer-1.0-DEMO.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AggregatorMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AggregatorMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="133" column="67" lean-forward="true" selection-start-line="133" selection-start-column="67" selection-end-line="134" selection-end-column="57" />
+            <state relative-caret-position="587">
+              <caret line="186" column="85" lean-forward="true" selection-start-line="186" selection-start-column="85" selection-end-line="186" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,11 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Util.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
-              <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+            <state relative-caret-position="340">
+              <caret line="20" column="75" lean-forward="true" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#130#131#0" expanded="true" />
@@ -116,7 +106,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/aax-sales-aggregator/src/main/resources/avro/aax-sales.avsc" />
-        <option value="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" />
         <option value="$PROJECT_DIR$/aax-aggregator/target/generated-sources/avro/com/durmus/kafka/mh/avro/aax/Util.java" />
         <option value="$PROJECT_DIR$/aax-aggregator/pom.xml" />
         <option value="$PROJECT_DIR$/aax-sales-aggregator/pom.xml" />
@@ -124,6 +113,7 @@
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AppConfig.java" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java" />
         <option value="$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java" />
+        <option value="$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf" />
       </list>
     </option>
   </component>
@@ -531,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544716986506</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit 1">
+      <created>1545039691767</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1545039691768</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -551,12 +548,12 @@
       <window_info anchor="bottom" id="Terminal" weight="0.28431374" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44412333" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.58381504" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -799,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aax-aggregator/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -823,24 +813,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java">
+    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/resources/application.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#130#131#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/AggregatorMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="133" column="67" lean-forward="true" selection-start-line="133" selection-start-column="67" selection-end-line="134" selection-end-column="57" />
+        <state relative-caret-position="587">
+          <caret line="186" column="85" lean-forward="true" selection-start-line="186" selection-start-column="85" selection-end-line="186" selection-end-column="85" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aax-aggregator/src/main/java/com/durmus/kafka/mh/aax/streams/aggregator/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="75" lean-forward="true" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
           </folding>
         </state>
       </provider>
