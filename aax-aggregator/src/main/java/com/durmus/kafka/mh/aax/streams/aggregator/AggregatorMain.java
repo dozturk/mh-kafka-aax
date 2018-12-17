@@ -3,7 +3,6 @@ package com.durmus.kafka.mh.aax.streams.aggregator;
 import com.durmus.kafka.mh.avro.aax.AAX;
 import com.durmus.kafka.mh.avro.aax.AAXCore;
 import com.durmus.kafka.mh.avro.aax.AAXEval;
-import com.typesafe.config.ConfigFactory;
 import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
@@ -20,13 +19,11 @@ import org.apache.kafka.streams.kstream.Produced;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.temporal.WeekFields;
 import java.util.Collections;
-import java.util.Date;
 import java.util.Properties;
 
 
@@ -91,10 +88,10 @@ public class AggregatorMain {
                 builder.stream(util.config.getSourceTopicName(), Consumed.with(Serdes.String(), aaxAvroSerde));
 
         KStream<String, AAXCore> coreStream = aaxFilter
-                .mapValues((k, aax) -> toCoreLayer(aax, util.config.getDatePattern()));
+                .mapValues((k, aax) -> toCoreLayer(aax));
 
         KStream<String, AAXEval> evalStream = aaxFilter
-                .mapValues((k, aax) -> toEvaluationLayer(aax,util.config.getDatePattern()));
+                .mapValues((k, aax) -> toEvaluationLayer(aax));
 
         coreStream.to(util.config.getSinkCoreTopicName(), Produced.with(Serdes.String(), aaxCoreAvroSerde));
         evalStream.to(util.config.getSinkEvaluationTopicName(), Produced.with(Serdes.String(), aaxEvalAvroSerde));
@@ -104,7 +101,7 @@ public class AggregatorMain {
 
 
 
-    private static AAXCore toCoreLayer(AAX aax, String datePattern)  {
+    private static AAXCore toCoreLayer(AAX aax)  {
         try {
 
             val aaxCore = AAXCore
@@ -149,7 +146,7 @@ public class AggregatorMain {
         }
     }
 
-    private static AAXEval toEvaluationLayer(AAX aax, String datePattern)  {
+    private static AAXEval toEvaluationLayer(AAX aax)  {
         try {
 
             val aaxEval = AAXEval
@@ -184,7 +181,7 @@ public class AggregatorMain {
                     .setMvlzendedatum(Util.getEpochMillis(aax.getMvlzendedatum()))
                     .setKundigungsdatumbindefrist(Util.getEpochMillis(aax.getKundigungsdatumbindefrist()))
 
-                    .setGeschaeftsfall(Util.getEpochMillis(aax.getVertragsende()) ==0
+                    .setGeschaeftsfall(Util.getEpochMillis(aax.getVertragsende()) == 0
                             ? "Zugang"
                             : "Wegfall")
                     .setGfDatum(Util.getEpochMillis(aax.getVertragsende()) == 0
