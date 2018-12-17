@@ -31,7 +31,7 @@
           <finalName>${project.artifactId}-${project.version}</finalName>
           <transformers>
             <transformer>
-              <mainClass>com.durmus.kafka.mh.inventory.streams.aggregator.AggregatorMain</mainClass>
+              <mainClass>com.durmus.kafka.mh.aax.streams.aggregator.AggregatorMain</mainClass>
             </transformer>
           </transformers>
         </configuration>

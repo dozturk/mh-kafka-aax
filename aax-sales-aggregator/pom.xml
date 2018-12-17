@@ -106,11 +106,11 @@
             <version>1.0-DEMO</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.durmus.kafka.mh.aax</groupId>
-            <artifactId>aax-sales-aggregator</artifactId>
-            <version>1.0-DEMO</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.durmus.kafka.mh.aax</groupId>-->
+            <!--<artifactId>aax-sales-aggregator</artifactId>-->
+            <!--<version>1.0-DEMO</version>-->
+        <!--</dependency>-->
 
     </dependencies>
 

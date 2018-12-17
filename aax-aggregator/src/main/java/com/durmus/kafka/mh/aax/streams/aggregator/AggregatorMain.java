@@ -8,6 +8,7 @@ import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
 import io.confluent.kafka.serializers.KafkaAvroSerializerConfig;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
+import lombok.val;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
@@ -28,18 +29,19 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Properties;
 
+
+
+
 public class AggregatorMain {
 
     private Logger log = LoggerFactory.getLogger(AggregatorMain.class.getSimpleName());
-    private AppConfig appConfig;
+    private static Util util = new Util();
 
     public static void main(String[] args) {
-        AggregatorMain aggregatorMain = new AggregatorMain();
-        aggregatorMain.start();
-    }
+//        AggregatorMain aggregatorMain = new AggregatorMain();
+//        aggregatorMain.start();
 
-    private AggregatorMain() {
-        appConfig = new AppConfig(ConfigFactory.load());
+        System.out.println(Util.getSexyEpochMillis("10.10.2018"));
     }
 
     private void start() {
@@ -56,8 +58,8 @@ public class AggregatorMain {
     private Properties getKafkaStreamsConfig() {
         Properties properties = new Properties();
 
-        properties.put(StreamsConfig.APPLICATION_ID_CONFIG, appConfig.getApplicationId());
-        properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, appConfig.getBootstrapServers());
+        properties.put(StreamsConfig.APPLICATION_ID_CONFIG, util.config.getApplicationId());
+        properties.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, util.config.getBootstrapServers());
         properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         // we disable the cache to demonstrate all the "steps" involved in the transformation - not recommended in prod
 //        properties.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, "0");
@@ -66,20 +68,20 @@ public class AggregatorMain {
 
         properties.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.StringSerde.class);
         properties.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, SpecificAvroSerde.class);
-        properties.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, appConfig.getSchemaRegistryUrl());
-        properties.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, appConfig.getSchemaRegistryUrl());
-        properties.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, appConfig.getSchemaRegistryUrl());
+        properties.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, util.config.getSchemaRegistryUrl());
+        properties.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, util.config.getSchemaRegistryUrl());
+        properties.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, util.config.getSchemaRegistryUrl());
         return properties;
     }
 
     private KafkaStreams createTopology(Properties config) {
 
         SpecificAvroSerde<AAX> aaxAvroSerde = new SpecificAvroSerde<>();
-        aaxAvroSerde.configure(Collections.singletonMap(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, appConfig.getSchemaRegistryUrl()), false);
+        aaxAvroSerde.configure(Collections.singletonMap(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, util.config.getSchemaRegistryUrl()), false);
         SpecificAvroSerde<AAXCore> aaxCoreAvroSerde= new SpecificAvroSerde<>();
-        aaxCoreAvroSerde.configure(Collections.singletonMap(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, appConfig.getSchemaRegistryUrl()), false);
+        aaxCoreAvroSerde.configure(Collections.singletonMap(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, util.config.getSchemaRegistryUrl()), false);
         SpecificAvroSerde<AAXEval> aaxEvalAvroSerde= new SpecificAvroSerde<>();
-        aaxEvalAvroSerde.configure(Collections.singletonMap(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, appConfig.getSchemaRegistryUrl()), false);
+        aaxEvalAvroSerde.configure(Collections.singletonMap(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, util.config.getSchemaRegistryUrl()), false);
 
 
 
@@ -87,105 +89,147 @@ public class AggregatorMain {
         StreamsBuilder builder = new StreamsBuilder();
 
         KStream<String, AAX> aaxFilter =
-                builder.stream(appConfig.getSourceTopicName(), Consumed.with(Serdes.String(), aaxAvroSerde));
+                builder.stream(util.config.getSourceTopicName(), Consumed.with(Serdes.String(), aaxAvroSerde));
 
         KStream<String, AAXCore> coreStream = aaxFilter
-                .mapValues((k, aax) -> toCoreLayer(aax, appConfig.getDatePattern()));
+                .mapValues((k, aax) -> toCoreLayer(aax, util.config.getDatePattern()));
 
         KStream<String, AAXEval> evalStream = aaxFilter
-                .mapValues((k, aax) -> toEvaluationLayer(aax,appConfig.getDatePattern()));
+                .mapValues((k, aax) -> toEvaluationLayer(aax,util.config.getDatePattern()));
 
-        coreStream.to(appConfig.getSinkCoreTopicName(), Produced.with(Serdes.String(), aaxCoreAvroSerde));
-        evalStream.to(appConfig.getSinkEvaluationTopicName(), Produced.with(Serdes.String(), aaxEvalAvroSerde));
+        coreStream.to(util.config.getSinkCoreTopicName(), Produced.with(Serdes.String(), aaxCoreAvroSerde));
+        evalStream.to(util.config.getSinkEvaluationTopicName(), Produced.with(Serdes.String(), aaxEvalAvroSerde));
 
         return new KafkaStreams(builder.build(), config);
     }
 
+
+
     private static AAXCore toCoreLayer(AAX aax, String datePattern)  {
         try {
-            AAXCore.Builder AAXCoreBuilder = AAXCore.newBuilder();
-            AAXCoreBuilder.setId(Long.parseLong(aax.getId()));
-            AAXCoreBuilder.setMhkundennummer(aax.getMhkundennummer());
-            AAXCoreBuilder.setGuid(aax.getGuid());
-            AAXCoreBuilder.setCrmtkundennummer(aax.getCrmtkundennummer());
-            AAXCoreBuilder.setCarmenkundennummer(aax.getCarmenkundennummer());
-            AAXCoreBuilder.setKek(aax.getKek());
-            AAXCoreBuilder.setName(aax.getName());
-            AAXCoreBuilder.setAdresse(aax.getAdresse());
-            AAXCoreBuilder.setMail(aax.getMail());
-            AAXCoreBuilder.setZahlart(aax.getZahlart());
-            if (aax.getVertragsnummer() != null && !aax.getVertragsnummer().equals("")) {
-                AAXCoreBuilder.setVertragsnummer(Long.parseLong(aax.getVertragsnummer()));
-            } else {
-                AAXCoreBuilder.setVertragsnummer(null);
-            }
-            if (aax.getProduktid() != null && !aax.getProduktid().equals("")) {
-                AAXCoreBuilder.setProduktid(Long.parseLong(aax.getProduktid()));
-            } else {
-                AAXCoreBuilder.setProduktid(null);
-            }
-            AAXCoreBuilder.setProduktname(aax.getProduktname());
-            if (aax.getMvlz() != null && !aax.getMvlz().equals("")) {
-                AAXCoreBuilder.setMvlz(Long.parseLong(aax.getMvlz()));
-            } else {
-                AAXCoreBuilder.setMvlz(null);
-            }
-            if (aax.getVertragsstart() != null && !aax.getVertragsstart().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsstart());
-                Long vStart = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXCoreBuilder.setVertragsstart(vStart);
-            } else {
-                Date date = new Date(0L);
-                Long vStart = date.toInstant().toEpochMilli();
-                AAXCoreBuilder.setVertragsstart(vStart);
-            }
-            if (aax.getVertragsende() != null && !aax.getVertragsende().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsende());
-                Long vEnde = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXCoreBuilder.setVertragsende(vEnde);
-            } else {
-                Date date = new Date(0L);
-                Long vEnde = date.toInstant().toEpochMilli();
-                AAXCoreBuilder.setVertragsende(vEnde);
-            }
-            if (aax.getKundigungsdatum() != null && !aax.getKundigungsdatum().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getKundigungsdatum());
-                Long kDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXCoreBuilder.setKundigungsdatum(kDatum);
-            } else {
-                Date date = new Date(0L);
-                Long kDatum = date.toInstant().toEpochMilli();
-                AAXCoreBuilder.setKundigungsdatum(kDatum);
-            }
-            AAXCoreBuilder.setKundigungsmodus(aax.getKundigungsmodus());
-            AAXCoreBuilder.setKundigungsgrund(aax.getKundigungsgrund());
-            if (aax.getMvlzendedatum() != null && !aax.getMvlzendedatum().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
-                Long mDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXCoreBuilder.setMvlzendedatum(mDatum);
-            } else {
-                Date date = new Date(0L);
-                Long mDatum = date.toInstant().toEpochMilli();
-                AAXCoreBuilder.setMvlzendedatum(mDatum);
-            }
-            if (aax.getKundigungsdatumbindefrist() != null && !aax.getKundigungsdatumbindefrist().equals("")) {
-                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
-                Long kDatumFrist = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
-                AAXCoreBuilder.setKundigungsdatumbindefrist(kDatumFrist);
-            } else {
-                Date date = new Date(0L);
-                Long kDatumFrist = date.toInstant().toEpochMilli();
-                AAXCoreBuilder.setKundigungsdatumbindefrist(kDatumFrist);
-            }
-            AAXCoreBuilder.setDeliveryDate(Instant.now().toEpochMilli());
 
-            AAXCore aaxCore = AAXCoreBuilder.build();
+            //val vs var?? lombok! && simple junit tests!
+            val aaxCore = AAXCore
+                    .newBuilder()
+                    .setId(Long.valueOf(aax.getId()))
+                    .setMhkundennummer(aax.getMhkundennummer())
+                    .setGuid(aax.getGuid())
+                    .setCrmtkundennummer(aax.getCrmtkundennummer())
+                    .setCarmenkundennummer(aax.getCarmenkundennummer())
+                    .setKek(aax.getKek())
+                    .setName(aax.getName())
+                    .setAdresse(aax.getAdresse())
+                    .setMail(aax.getMail())
+                    .setZahlart(aax.getZahlart())
+                    .setProduktname(aax.getProduktname())
+                    .setKundigungsmodus(aax.getKundigungsmodus())
+                    .setKundigungsgrund(aax.getKundigungsgrund())
+
+                    .setVertragsnummer(Util.checkIsEmptyOrNull(aax.getVertragsnummer())
+                            ? Long.valueOf(aax.getVertragsnummer())
+                            : null)
+                    .setProduktid(Util.checkIsEmptyOrNull(aax.getProduktid())
+                            ? Long.valueOf(aax.getProduktid())
+                            : null)
+                    .setMvlz(Util.checkIsEmptyOrNull(aax.getMvlz())
+                            ? Long.valueOf(aax.getMvlz())
+                            : null)
+
+                    .setVertragsstart(Util.getEpochMillis(aax.getVertragsstart()))
+                    .setVertragsende(Util.getEpochMillis(aax.getVertragsende()))
+                    .setKundigungsdatum(Util.getEpochMillis(aax.getKundigungsdatum()))
+                    .setMvlzendedatum(Util.getEpochMillis(aax.getMvlzendedatum()))
+                    .setKundigungsdatumbindefrist(Util.getEpochMillis(aax.getKundigungsdatumbindefrist()))
+                    .setDeliveryDate(Instant.now().toEpochMilli())
+                    .build();
+
+
+
+
+
+//            AAXCore.Builder AAXCoreBuilder = AAXCore.newBuilder();
+//            AAXCoreBuilder.setId(Long.parseLong(aax.getId()));
+//            AAXCoreBuilder.setMhkundennummer(aax.getMhkundennummer());
+//            AAXCoreBuilder.setGuid(aax.getGuid());
+//            AAXCoreBuilder.setCrmtkundennummer(aax.getCrmtkundennummer());
+//            AAXCoreBuilder.setCarmenkundennummer(aax.getCarmenkundennummer());
+//            AAXCoreBuilder.setKek(aax.getKek());
+//            AAXCoreBuilder.setName(aax.getName());
+//            AAXCoreBuilder.setAdresse(aax.getAdresse());
+//            AAXCoreBuilder.setMail(aax.getMail());
+//            AAXCoreBuilder.setZahlart(aax.getZahlart());
+//            if (aax.getVertragsnummer() != null && !aax.getVertragsnummer().equals("")) {
+//                AAXCoreBuilder.setVertragsnummer(Long.parseLong(aax.getVertragsnummer()));
+//            } else {
+//                AAXCoreBuilder.setVertragsnummer(null);
+//            }
+//            if (aax.getProduktid() != null && !aax.getProduktid().equals("")) {
+//                AAXCoreBuilder.setProduktid(Long.parseLong(aax.getProduktid()));
+//            } else {
+//                AAXCoreBuilder.setProduktid(null);
+//            }
+//            AAXCoreBuilder.setProduktname(aax.getProduktname());
+//            if (aax.getMvlz() != null && !aax.getMvlz().equals("")) {
+//                AAXCoreBuilder.setMvlz(Long.parseLong(aax.getMvlz()));
+//            } else {
+//                AAXCoreBuilder.setMvlz(null);
+//            }
+//            if (aax.getVertragsstart() != null && !aax.getVertragsstart().equals("")) {
+//                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsstart());
+//                Long vStart = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
+//                AAXCoreBuilder.setVertragsstart(vStart);
+//            } else {
+//                Date date = new Date(0L);
+//                Long vStart = date.toInstant().toEpochMilli();
+//                AAXCoreBuilder.setVertragsstart(vStart);
+//            }
+//            if (aax.getVertragsende() != null && !aax.getVertragsende().equals("")) {
+//                Date date = new SimpleDateFormat(datePattern).parse(aax.getVertragsende());
+//                Long vEnde = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
+//                AAXCoreBuilder.setVertragsende(vEnde);
+//            } else {
+//                Date date = new Date(0L);
+//                Long vEnde = date.toInstant().toEpochMilli();
+//                AAXCoreBuilder.setVertragsende(vEnde);
+//            }
+//            if (aax.getKundigungsdatum() != null && !aax.getKundigungsdatum().equals("")) {
+//                Date date = new SimpleDateFormat(datePattern).parse(aax.getKundigungsdatum());
+//                Long kDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
+//                AAXCoreBuilder.setKundigungsdatum(kDatum);
+//            } else {
+//                Date date = new Date(0L);
+//                Long kDatum = date.toInstant().toEpochMilli();
+//                AAXCoreBuilder.setKundigungsdatum(kDatum);
+//            }
+//            AAXCoreBuilder.setKundigungsmodus(aax.getKundigungsmodus());
+//            AAXCoreBuilder.setKundigungsgrund(aax.getKundigungsgrund());
+//            if (aax.getMvlzendedatum() != null && !aax.getMvlzendedatum().equals("")) {
+//                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
+//                Long mDatum = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
+//                AAXCoreBuilder.setMvlzendedatum(mDatum);
+//            } else {
+//                Date date = new Date(0L);
+//                Long mDatum = date.toInstant().toEpochMilli();
+//                AAXCoreBuilder.setMvlzendedatum(mDatum);
+//            }
+//            if (aax.getKundigungsdatumbindefrist() != null && !aax.getKundigungsdatumbindefrist().equals("")) {
+//                Date date = new SimpleDateFormat(datePattern).parse(aax.getMvlzendedatum());
+//                Long kDatumFrist = date.toInstant().plusMillis(3600*1000*2).toEpochMilli();
+//                AAXCoreBuilder.setKundigungsdatumbindefrist(kDatumFrist);
+//            } else {
+//                Date date = new Date(0L);
+//                Long kDatumFrist = date.toInstant().toEpochMilli();
+//                AAXCoreBuilder.setKundigungsdatumbindefrist(kDatumFrist);
+//            }
+//            AAXCoreBuilder.setDeliveryDate(Instant.now().toEpochMilli());
+
+//            AAXCore aaxCore = AAXCoreBuilder.build();
 
 //            System.out.println(aaxCore);
 
             return aaxCore;
         }
-        catch (NumberFormatException | ParseException e){
+        catch (NumberFormatException  e){
             throw new NumberFormatException();
         }
     }
